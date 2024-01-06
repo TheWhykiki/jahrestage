@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.1" type="plugin" group="system" method="upgrade">
+    <name>plg_system_jahrestage</name>
+    <author>Kiki Schueling</author>
+    <creationDate>January 2024</creationDate>
+    <authorEmail>info@whykiki.de</authorEmail>
+    <authorUrl>whykiki.de</authorUrl>
+    <version>1.0.0</version>
+    <description>Jahrestage Shortcodes: Einfach den Shortcode '[jahrestage]' zB in einem Modul (eigenes HTML), einem
+        Editor oder einem Yootheme Textelement hinterlegen.
+    </description>
+    <files>
+        <filename plugin="jahrestage">jahrestage.php</filename>
+        <folder>layouts</folder>
+    </files>
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field
+                        name="jahrestage"
+                        type="subform"
+                        label="Apotheken"
+                        description="Apotheken verwalten"
+                        multiple="true"
+                        min="1"
+                        max="23"
+                >
+                    <form>
+                        <field name="datum"
+                               type="calendar"
+                               default="NOW"
+                               label="Wähle ein Datum"
+                               description=""
+                               class="input-small"
+                               required="true"
+                               showtime="false"
+                               todaybutton="false"
+                               filltable="false"
+                               translateformat="false"
+                               format="%Y-%m-%d"
+                        />
+                        <field
+                                name="titel"
+                                type="text"
+                                label="Headline / Titel"
+                        />
+
+                        <field
+                                name="beschreibung"
+                                type="editor"
+                                label="Test Field"
+                                description=""
+                                width="300"
+                                filter="raw"
+                        />
+
+                    </form>
+                </field>
+
+            </fieldset>
+
+        </fields>
+    </config>
+</extension>
